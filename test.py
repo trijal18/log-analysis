@@ -2,7 +2,7 @@ import csv
 from collections import defaultdict
 
 # Configurable threshold for failed login attempts
-FAILED_LOGIN_THRESHOLD = 10
+FAILED_LOGIN_THRESHOLD = 5
 
 def parse_log_file(file_path):
     """Reads the log file and extracts necessary data."""
@@ -76,7 +76,7 @@ def main():
     # Sort and analyze data
     sorted_ip_requests = sorted(ip_request_counts.items(), key=lambda x: x[1], reverse=True)
     sorted_endpoints = sorted(endpoint_counts.items(), key=lambda x: x[1], reverse=True)
-    suspicious_activity = [(ip, count) for ip, count in failed_logins.items() if count > FAILED_LOGIN_THRESHOLD]
+    suspicious_activity = [(ip, count) for ip, count in failed_logins.items() if count >= FAILED_LOGIN_THRESHOLD]
     
     # Display results
     print("IP Address Request Counts:")
@@ -98,8 +98,8 @@ def main():
     print()
     
     # Save results to CSV
-    write_to_csv(sorted_ip_requests, sorted_endpoints, suspicious_activity, output_csv_file)
-    print(f"Results saved to {output_csv_file}")
+    # write_to_csv(sorted_ip_requests, sorted_endpoints, suspicious_activity, output_csv_file)
+    # print(f"Results saved to {output_csv_file}")
 
 if __name__ == "__main__":
     main()
