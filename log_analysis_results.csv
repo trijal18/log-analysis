@@ -1,0 +1,11 @@
+Requests per IP Address,,,,,
+,203.0.113.5,8.0,,,
+,198.51.100.23,8.0,,,
+,192.168.1.1,7.0,,,
+,10.0.0.2,6.0,,,
+,192.168.1.100,5.0,,,
+Most Frequently Accessed Endpoint,,,,,
+,,,/login,13.0,
+Suspicious Activity Detected,,,,,
+,203.0.113.5,,,,8.0
+,192.168.1.100,,,,5.0
